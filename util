@@ -1,0 +1,24 @@
+const mod={};
+modlue.exports =mod;
+
+mod.HashTable =function(){
+  var size;
+  var entry;
+  this.add =function(key, value){//add key-value or update value by key
+    if(!entry[key]){
+      size++;
+    }
+    entry[key]=value;
+  };
+  this.containsKey =function(key){
+    return (key in entry);
+  };
+  this.containsValue =function(value){
+    for(var key in entry){
+      if(entry[key]==value){//same of pointer
+        return true;
+      }
+    }
+    return false;
+  };
+};
