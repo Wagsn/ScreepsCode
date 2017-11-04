@@ -3,7 +3,7 @@ code for game of screeps
 
 Some tips on the use of GitHub
 
-## [How to create a folder online on GitHub[reshipped]][1] [How to use MarkDown][2]
+## [How to create a folder online on GitHub[reshipped]][1] [ How to use MarkDown][2]
 
 1. Click the new Files button, and then enter the filename containing the slash character ("/"). That is, creating a file that contains a path (directory) that automatically produces a new folder.
 
