@@ -345,7 +345,7 @@ mod.SourceManager =function(){ //distribution and registration of resources for 
 			}
 		}
 	};
-	this.getIdleSource =function()){
+	this.getIdleSource =function(){
 		var sourceInfos =sourcesTable.getValues();
 		for(var i=0, len =sourceInfos.length; i<len; i++){
 			if(!mod.isActiveforCreepByName(sourceInfos[i].harvesterName)){  //idle source 

@@ -8,7 +8,7 @@ var util = require('util');
 var tower =require('tower');
 
 module.exports.loop = function () {
-	// 13 36 E54S13
+	// 13 36 E54S13 //
 	// 43 34 E54S16 下方
 	var cupUsedTxt ='tick start: ' +Game.cpu.getUsed();
 	
@@ -48,7 +48,7 @@ module.exports.loop = function () {
 	
 	cupUsedTxt +='  end creepsView: ' +Game.cpu.getUsed();
 	
-	
+	////
 	//Memory['someData']['claimerNeedCount'] =1;//+Memory['someData']['claimerNeedCount'] 
 	//spawn new creep   
 	var creepNeedCount =Memory['someData']['builderNeedCount'] +Memory['someData']['onlyHarvesterNeedCount']+Memory['someData']['carrierNeedCount']
