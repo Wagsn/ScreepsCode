@@ -199,7 +199,7 @@ mod.getNomalBodys =function (spawnEnergy) {
 };
 mod.HashTable =function(){ // Custom simple hash table constructor. can be used to save structures or resources information
 	var size =0;
-	var ebtry = new Object(); //entry(记录)
+	var entry = new Object(); //entry(记录)
 	this.add =function(key, value){ //if key not in entry, then add it, else update value.
 		if(!this.containsKey(key)){
 			size++
@@ -225,9 +225,25 @@ mod.HashTable =function(){ // Custom simple hash table constructor. can be used 
 		}
 		return false;
 	};
-	this.contains =function(f){  //
+	this.containsByFunc =function(func){  //
 		for(var prop in entry){
-			return f(entry[prop]);   //f(object){} obtect in entry
+			return func(entry[prop]);   //f(object){} obtect in entry
+		}
+		return false;
+	};
+	this.containsByObj =function(obj){
+		if(obj.isEmpty()){
+			return false;
+		}
+		var values =this.getValues();
+		for(var i =0, len =values.length; i<len; i++){
+			var flag =true;
+			for(var prop in obj){
+				flag =flag && (obj[prop] == values[i][prop]);
+			}
+			if(flag){
+				return true;
+			}
 		}
 		return false;
 	};
