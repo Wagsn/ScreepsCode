@@ -53,14 +53,55 @@ mod.HashTable =function(){
     }
     return false;
   };
-  this.contains =function(filter){
-    if(typeof filter == 'function'){
-      return this.containsByFunc(filter);
+  this.contains =function(o){
+    if(typeof o == 'function'){
+      return this.containsByFunc(o);
     }
-    if(typeof filter == 'object'){
-      return this.containsByObj(filter);
+    if(typeof o == 'object'){
+      return this.containsByObj(o);
     }
     return false;
   };
-  this.
+  this.filterSingleByObj =function(obj){
+    for(var key in entry){
+      var flag =true;
+      for(var prop in obj){
+        flag =flag&&((prop in entry[key]) && entry[key][prop] == obj[prop]);
+      }
+      if(flag){
+        return entry[key];
+      }
+    }
+    return null;
+  };
+  this.filterSingleByFunc =function(f){
+		for(var prop in entry){
+			if(f(entry[prop])){
+				return entry[prop];
+			}
+		}
+		return null;
+	};
+  this.filterByFunc =function(func){
+		var values =[];
+		for(var prop in entry){
+			if(f(entry[prop])){
+				values.push(entry[prop]);
+			}
+		}
+		return values;
+	};
+  this.filterByObj =function(obj){
+    var values =[];
+    for(var key in entry){
+      var flag =true;
+      for(var prop in obj){
+        flag =flag&&((prop in entry[key]) && entry[key][prop] == obj[prop]);
+      }
+      if(flag){
+        values.push(entry[key]);
+      }
+    }
+    return values;
+  };
 };
