@@ -62,4 +62,5 @@ mod.HashTable =function(){
     }
     return false;
   };
+  this.
 };
