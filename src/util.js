@@ -219,12 +219,14 @@ mod.HashTable =function(){ // Custom simple hash table constructor. can be used 
 	};
 	this.containsValue =function(value){
 		for(var prop in entry){
-			if(entry[prop] == value){
+			if(entry[prop] == value){  //only check the pointer
 				return true;
 			}
 		}
 		return false;
 	};
+	//compare 比较
+	
 	this.containsByFunc =function(func){  //
 		for(var prop in entry){
 			return func(entry[prop]);   //f(object){} obtect in entry
